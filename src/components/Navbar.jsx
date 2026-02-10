@@ -12,11 +12,11 @@ const Navbar = () => {
     borderRadius: "4px",
   };
   return (
-    <div className="Navbar">
+    <div className="w-full flex justify-between items-center py-4 px-8">
       <Logo />
 
-      <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-        <ul>
+      <div className="flex items-center gap-10">
+        <ul style={{ display: "flex", gap: "10px", alignItems: "center" }}>
           <NavLink
             className={({ isActive }) =>
               isActive ? "activeLink" : "text-amber-200"
