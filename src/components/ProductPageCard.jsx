@@ -24,7 +24,7 @@ const ProductPageCard = ({ product }) => {
             </div>
         </div>
 
-        <div className='absolute top-2 right-2 w-[40px] h-[40px] bg-red-500 rounded-full flex items-center justify-center'>
+        <div className='absolute top-2 right-2 w-40 h-10 bg-red-500 rounded-full flex items-center justify-center'>
             <span className='text-white text-[12px] font-bold'>{Math.round(product.discountPercentage)}%</span>
         </div>
     </div>

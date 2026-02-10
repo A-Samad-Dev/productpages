@@ -19,7 +19,7 @@ const Navbar = () => {
         <ul style={{ display: "flex", gap: "10px", alignItems: "center" }}>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "activeLink" : "text-amber-200"
+              isActive ? "activeLink" : "text-black"
             }
             to="/"
           >
@@ -28,7 +28,7 @@ const Navbar = () => {
 
           <NavLink
             className={({ isActive }) =>
-              isActive ? "activeLink" : "text-amber-200"
+              isActive ? "activeLink" : "text-black"
             }
             to="/about"
           >
@@ -37,7 +37,7 @@ const Navbar = () => {
 
           <NavLink
             className={({ isActive }) =>
-              isActive ? "activeLink" : "text-amber-200"
+              isActive ? "activeLink" : "text-black"
             }
             to="/product"
           >
@@ -46,7 +46,7 @@ const Navbar = () => {
 
           <NavLink
             className={({ isActive }) =>
-              isActive ? "activeLink" : "text-amber-200"
+              isActive ? "activeLink" : "text-black"
             }
             to="/d"
           >
@@ -56,7 +56,7 @@ const Navbar = () => {
 
           <NavLink
             className={({ isActive }) =>
-              isActive ? "activeLink" : "text-amber-200"
+              isActive ? "activeLink" : "text-black"
             }
             to="/s"
           >
@@ -65,7 +65,7 @@ const Navbar = () => {
 
           <NavLink
             className={({ isActive }) =>
-              isActive ? "activeLink" : "text-amber-200"
+              isActive ? "activeLink" : "text-black"
             }
             to="/contact"
           >

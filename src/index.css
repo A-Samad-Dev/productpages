@@ -5,7 +5,7 @@ body {
   background-color: #f5f5f5;
 }
 
-a {
+/* a {
   text-decoration: none;
   color: inherit;
 }
@@ -20,4 +20,10 @@ li {
   &:hover {
     color: red;
   }
+} */
+.unorderedlist {
+  list-style-type: disc;
+  margin-top: 10px;
+  padding: 5px;
+  /* align-items:center; */
 }
