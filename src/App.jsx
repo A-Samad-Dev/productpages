@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Button } from "./components/button";
-import Navbar from "./components/navbar";
 
 /*const App = () => {
   // Usestate -  state management
@@ -136,6 +135,7 @@ const App = () => {
 
           <Route path="/contact" element={<Contact />} />
         </Route>
+
         <Route
           path="*"
           element={
