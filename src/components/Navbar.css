@@ -1,0 +1,9 @@
+.Navbar {
+  display: flex;
+  justify-content:space-between;
+  gap: 80px;
+}
+.activeLink{
+  padding-right:2px;
+  color:red;
+}
