@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation, useParams } from "react-router";
 import { FaStar } from "react-icons/fa";
 import { MdOutlineCreditCard } from "react-icons/md";
+import { RxCaretLeft } from "react-icons/rx";
 
 const Productdetails = () => {
   const { id } = useParams();
@@ -13,7 +14,10 @@ const Productdetails = () => {
 
   return (
     <div>
-      <div className=" mt-20 w-[80%] md:w-[50%] mx-auto bg-white  rounded-md shadow-black/30 shadow-lg obbject-contain px-15 md:px-5">
+      <div>
+        <span className="cursor-pointer flex gap-1 text-3xl items-center" onClick={() => window.history.back()}> <RxCaretLeft size={40} /> <span>Back</span></span>
+      </div>
+      <div className=" mt-10 w-[80%] md:w-[50%] mx-auto bg-white  rounded-md shadow-black/30 shadow-lg obbject-contain px-15 md:px-5">
         <div className="px-">
           {" "}
           <h1 className="text-2xl  font-serif tracking-tight">

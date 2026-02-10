@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import SkeletonLoader from "./SkeletonLoader";
+import ProductPageCard from "./ProductPageCard";
 
 const ProductsPage = () => {
   const navigate = useNavigate();
@@ -10,62 +12,33 @@ const ProductsPage = () => {
   const [allContent, setallContent] = useState(5);
 
   useEffect(() => {
-    fetch("https://dummyjson.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        setproducts(data.products);
-        // console.log(products);
-      });
+    async function fetchProducts() {
+      const fetchRes = await fetch("https://dummyjson.com/products")
+      console.log(fetchRes);
+      const data = await fetchRes.json();
+      console.log(data.products);
+      setproducts(data.products)
+    }
+    
+    fetchProducts()
   }, [products]);
 
   return (
-    <div className="">
+    <div className="p-8">
       <h2>All Products</h2>
-      <div className="w-full grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {products.length > 0 ? (
-          products.map((product) => (
-            <div
-              onClick={() =>
-                navigate(`/product/${product.id}`, { state: { product } })
-              }
-              key={product.id}
-              className="w-full h-[250] rounded-sm bg-white"
-            >
-              <div className="w-full h-37.5 object-cover">
-                <img
-                  src={product.thumbnail}
-                  alt={product.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h1 className="text-center font-bold">{product.title}</h1>
-              <p className="text-center">
-                {product.description.split(" ").slice(0, allContent).join(" ")}
-                {allContent == 5 ? (
-                  <span
-                    onClick={() => setallContent(product.description.length)}
-                    className="hover:cursor-pointer"
-                  >
-                    ...
-                  </span>
-                ) : (
-                  <span
-                    className="hover cursor-pointer text-red-500"
-                    onClick={() => setallContent(5)}
-                  >
-                    read less
-                  </span>
-                )}
-              </p>
-              <p>N{product.price.toLocaleString()}</p>
-            </div>
-          ))
-        ) : (
-          <div className="">
-            <p>no product available</p>
+      {products.length <= 0 ? (
+          <div className="w-full grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {Array(16). fill(0).map((_, index) => (
+              <SkeletonLoader key={index} />
+            ))}
           </div>
-        )}
-      </div>
+      ) : 
+        <div className="w-full grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {products.map(product => (
+            <ProductPageCard product={product} key={product.id} />
+          ))}
+        </div>
+      }
     </div>
   );
 };
