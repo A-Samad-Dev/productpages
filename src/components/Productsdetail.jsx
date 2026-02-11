@@ -169,14 +169,19 @@ const Productdetails = () => {
                       price ${product.price}
                     </span>
                     <br />
-                    <span className="text-red-400">
-                      Total:$
-                      {!count
-                        ? Math.trunc(product.price - product.discountPercentage)
-                        : Math.trunc(
-                            (product.price - product.discountPercentage) *
-                              count,
-                          )}
+                    <span
+                      className={`text-red-400 ${
+                        !count
+                          ? "hidden"
+                          : Math.trunc(
+                              (product.price - product.discountPercentage) *
+                                count,
+                            )
+                      }`}
+                    >
+                      Total:${" "} 
+                      {Math.trunc(product.price - product.discountPercentage) *
+                        count}
                     </span>
                   </h3>
                 </div>
